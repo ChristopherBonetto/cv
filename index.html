@@ -1,18 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex">
-    <title>Christopher Bonetto | Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
 
-    <meta http-equiv="refresh" content="0; url=https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&tab=default">
+  <title>Christopher Bonetto | Resume</title>
+  <meta name="description" content="Christopher Bonetto's current resume. Software Engineer focused on Unity, Unreal Engine, C#, C++, gameplay, multiplayer, UI, tools and immersive experiences." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Christopher Bonetto | Resume" />
+  <meta property="og:description" content="Software Engineer focused on Unity, Unreal Engine, gameplay, multiplayer, UI, tools and immersive experiences." />
+  <meta property="og:url" content="https://christopherbonetto.github.io/cv/" />
+  <meta property="og:image" content="https://christopherbonetto.github.io/cv/resume-banner.png" />
+  <meta property="og:image:alt" content="Christopher Bonetto - Software Engineer resume banner" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Christopher Bonetto | Resume" />
+  <meta name="twitter:description" content="Software Engineer focused on Unity, Unreal Engine, gameplay, multiplayer, UI, tools and immersive experiences." />
+  <meta name="twitter:image" content="https://christopherbonetto.github.io/cv/resume-banner.png" />
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08111a;
+      --panel: rgba(14, 28, 42, 0.9);
+      --panel-2: rgba(20, 39, 58, 0.78);
+      --text: #f5f7fa;
+      --muted: #a9b7c6;
+      --accent: #4f9cff;
+      --accent-2: #78b4ff;
+      --border: rgba(255, 255, 255, 0.09);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79, 156, 255, 0.12), transparent 34%),
+        linear-gradient(180deg, #08111a 0%, #0a1520 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    .hero {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #0b1520;
+    }
+
+    .content {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .role {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .summary {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #d5dde5;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #06111c;
+      border-color: transparent;
+    }
+
+    .button-secondary {
+      background: var(--panel-2);
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .link-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.025);
+      text-decoration: none;
+    }
+
+    .link-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .link-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 24px 4px 0;
+      color: #7f90a2;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 10px;
+      }
+
+      .hero {
+        border-radius: 18px;
+      }
+
+      .content {
+        padding: 24px 20px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>
-        Opening Christopher Bonetto's resume...
-        <a href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&tab=default">
-            Click here if the PDF does not open automatically.
-        </a>
-    </p>
+  <main class="page">
+    <section class="hero">
+      <img class="hero-image" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer" />
+
+      <div class="content">
+        <p class="eyebrow">Latest resume</p>
+        <h1>Christopher Bonetto</h1>
+        <p class="role">Software Engineer · Unity · Unreal Engine · C# · C++</p>
+
+        <p class="summary">
+          Software Engineer with nearly six years of professional experience across gameplay, multiplayer, UI, tools and interactive systems. My background spans Unity and Unreal Engine, live multiplayer products, XR/AR applications and cross-discipline game development.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">
+            View Resume PDF
+          </a>
+          <a class="button button-secondary" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">
+            Open / Download PDF
+          </a>
+        </div>
+
+        <div class="links">
+          <a class="link-card" href="https://github.com/ChristopherBonetto" target="_blank" rel="noopener noreferrer">
+            <strong>GitHub Portfolio</strong>
+            <span>Selected game development and programming projects</span>
+          </a>
+
+          <a class="link-card" href="https://www.linkedin.com/in/christopher-bonetto-547876221" target="_blank" rel="noopener noreferrer">
+            <strong>LinkedIn</strong>
+            <span>Professional profile and experience</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      This page always points to the current version of my resume.
+    </footer>
+  </main>
 </body>
 </html>
