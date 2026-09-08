@@ -10,11 +10,12 @@
       --bg: #08111a;
       --panel: #0d1b29;
       --text: #f5f7fa;
-      --muted: #9fb0c0;
       --accent: #4f9cff;
       --border: rgba(255,255,255,.08);
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -22,11 +23,13 @@
       background: linear-gradient(180deg, #08111a 0%, #0a1520 100%);
       color: var(--text);
     }
+
     .wrap {
       width: min(1180px, calc(100% - 24px));
       margin: 0 auto;
       padding: 12px 0 28px;
     }
+
     .card {
       overflow: hidden;
       border: 1px solid var(--border);
@@ -34,60 +37,92 @@
       background: var(--panel);
       box-shadow: 0 18px 60px rgba(0,0,0,.35);
     }
+
+    .banner-wrap {
+      position: relative;
+      background: #08111a;
+    }
+
     .banner {
       display: block;
       width: 100%;
       height: auto;
     }
-    .toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .label {
-      font-size: .9rem;
-      color: var(--muted);
-    }
+
     .button {
+      position: absolute;
+      left: 44.5%;
+      top: 39%;
+      transform: translate(-50%, -50%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 42px;
-      padding: 0 16px;
+      padding: 0 18px;
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 10px;
       text-decoration: none;
       font-weight: 700;
       background: var(--accent);
       color: #06111c;
+      box-shadow: 0 8px 24px rgba(0,0,0,.28);
+      transition: transform .15s ease, filter .15s ease;
     }
+
+    .button:hover {
+      transform: translate(-50%, -52%);
+      filter: brightness(1.05);
+    }
+
     .viewer {
+      display: block;
       width: 100%;
-      height: calc(100vh - 260px);
+      height: calc(100vh - 215px);
       min-height: 680px;
       border: 0;
+      border-top: 1px solid var(--border);
       background: white;
     }
+
     @media (max-width: 720px) {
-      .wrap { width: min(100% - 12px, 1180px); padding-top: 6px; }
-      .card { border-radius: 12px; }
-      .toolbar { align-items: stretch; flex-direction: column; }
-      .button { width: 100%; }
-      .viewer { height: 75vh; min-height: 560px; }
+      .wrap {
+        width: min(100% - 12px, 1180px);
+        padding-top: 6px;
+      }
+
+      .card {
+        border-radius: 12px;
+      }
+
+      .button {
+        left: 50%;
+        top: auto;
+        bottom: 10px;
+        transform: translateX(-50%);
+        min-height: 38px;
+        padding: 0 14px;
+        font-size: .9rem;
+      }
+
+      .button:hover {
+        transform: translateX(-50%);
+      }
+
+      .viewer {
+        height: 78vh;
+        min-height: 560px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
-      <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
-      <div class="toolbar">
-        <span class="label">Resume preview</span>
+      <div class="banner-wrap">
+        <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
         <a class="button" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">Download PDF</a>
       </div>
+
       <iframe class="viewer" src="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/preview?tab=default" title="Christopher Bonetto Resume"></iframe>
     </section>
   </main>
