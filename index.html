@@ -6,30 +6,27 @@
   <meta name="robots" content="index,follow" />
 
   <title>Christopher Bonetto | Resume</title>
-  <meta name="description" content="Christopher Bonetto's current resume and professional links." />
+  <meta name="description" content="Christopher Bonetto's current resume." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Christopher Bonetto | Resume" />
-  <meta property="og:description" content="Current resume, GitHub portfolio and LinkedIn profile." />
+  <meta property="og:description" content="Current resume." />
   <meta property="og:url" content="https://christopherbonetto.github.io/cv/" />
   <meta property="og:image" content="https://christopherbonetto.github.io/cv/resume-banner.png" />
   <meta property="og:image:alt" content="Christopher Bonetto - Software Engineer resume banner" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Christopher Bonetto | Resume" />
-  <meta name="twitter:description" content="Current resume, GitHub portfolio and LinkedIn profile." />
+  <meta name="twitter:description" content="Current resume." />
   <meta name="twitter:image" content="https://christopherbonetto.github.io/cv/resume-banner.png" />
 
   <style>
     :root {
       color-scheme: dark;
-      --panel: rgba(14, 28, 42, 0.92);
-      --panel-2: rgba(20, 39, 58, 0.78);
-      --text: #f5f7fa;
-      --muted: #a9b7c6;
+      --bg: #08111a;
+      --panel: #0d1b29;
+      --border: rgba(255,255,255,.08);
       --accent: #4f9cff;
-      --border: rgba(255, 255, 255, 0.09);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
     }
 
     * { box-sizing: border-box; }
@@ -37,162 +34,105 @@
     body {
       margin: 0;
       min-height: 100vh;
+      background: linear-gradient(180deg, #08111a 0%, #0a1520 100%);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(79, 156, 255, 0.12), transparent 34%),
-        linear-gradient(180deg, #08111a 0%, #0a1520 100%);
-      color: var(--text);
     }
 
-    a { color: inherit; }
-
-    .page {
+    .wrap {
       width: min(1180px, calc(100% - 24px));
       margin: 0 auto;
-      padding: 12px 0 24px;
+      padding: 8px 0 28px;
     }
 
-    .hero {
+    .card {
       overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 18px;
       background: var(--panel);
-      box-shadow: var(--shadow);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
     }
 
-    .hero-image {
+    .banner-wrap {
+      position: relative;
+    }
+
+    .banner {
       display: block;
       width: 100%;
       height: auto;
-      background: #0b1520;
     }
 
-    .content {
-      padding: 18px 22px 22px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 0;
-    }
-
-    .button {
+    .download-button {
+      position: absolute;
+      left: 44.5%;
+      top: 83%;
+      transform: translate(-50%, -50%);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
+      min-height: 42px;
       padding: 0 18px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 700;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .button:hover { transform: translateY(-1px); }
-
-    .button-primary {
       background: var(--accent);
       color: #06111c;
-      border-color: transparent;
+      box-shadow: 0 8px 24px rgba(0,0,0,.28);
+      transition: transform .15s ease, filter .15s ease;
     }
 
-    .button-secondary { background: var(--panel-2); }
-
-    .links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
+    .download-button:hover {
+      transform: translate(-50%, -52%);
+      filter: brightness(1.05);
     }
 
-    .link-card {
-      padding: 15px 17px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.025);
-      text-decoration: none;
-    }
-
-    .link-card strong {
+    .viewer {
       display: block;
-      margin-bottom: 3px;
-    }
-
-    .link-card span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    footer {
-      padding: 16px 4px 0;
-      color: #7f90a2;
-      text-align: center;
-      font-size: 0.84rem;
+      width: 100%;
+      height: calc(100vh - 185px);
+      min-height: 680px;
+      border: 0;
+      border-top: 1px solid var(--border);
+      background: white;
     }
 
     @media (max-width: 720px) {
-      .page {
+      .wrap {
         width: min(100% - 12px, 1180px);
         padding-top: 6px;
       }
 
-      .hero { border-radius: 16px; }
-      .content { padding: 14px; }
-
-      .actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      .card {
+        border-radius: 12px;
       }
 
-      .button {
-        width: 100%;
-        padding: 0 12px;
-        font-size: 0.92rem;
+      .download-button {
+        left: 48%;
+        top: 82%;
+        min-height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        font-size: .75rem;
       }
 
-      .links { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 440px) {
-      .actions { grid-template-columns: 1fr; }
+      .viewer {
+        height: 78vh;
+        min-height: 560px;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <img class="hero-image" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer" />
-
-      <div class="content">
-        <div class="actions">
-          <a class="button button-primary" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/preview?tab=default" target="_blank" rel="noopener noreferrer">
-            View Resume
-          </a>
-          <a class="button button-secondary" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">
-            Download PDF
-          </a>
-        </div>
-
-        <div class="links">
-          <a class="link-card" href="https://github.com/ChristopherBonetto" target="_blank" rel="noopener noreferrer">
-            <strong>GitHub Portfolio</strong>
-            <span>Selected development projects</span>
-          </a>
-
-          <a class="link-card" href="https://www.linkedin.com/in/christopher-bonetto-547876221" target="_blank" rel="noopener noreferrer">
-            <strong>LinkedIn</strong>
-            <span>Professional profile</span>
-          </a>
-        </div>
+  <main class="wrap">
+    <section class="card">
+      <div class="banner-wrap">
+        <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
+        <a class="download-button" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">Download PDF</a>
       </div>
-    </section>
 
-    <footer>
-      Current resume and professional links.
-    </footer>
+      <iframe class="viewer" src="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/preview?tab=default" title="Christopher Bonetto Resume"></iframe>
+    </section>
   </main>
 </body>
 </html>
