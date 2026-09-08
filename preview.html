@@ -51,6 +51,33 @@
       margin-top: -6.5%;
     }
 
+    .corner-words {
+      position: absolute;
+      top: 5.5%;
+      right: 3.2%;
+      display: grid;
+      grid-template-columns: 1fr 1px;
+      column-gap: 12px;
+      align-items: stretch;
+      color: rgba(169,183,198,.55);
+      pointer-events: none;
+      text-align: right;
+    }
+
+    .corner-words .words {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: clamp(.48rem, .78vw, .72rem);
+      letter-spacing: .32em;
+      line-height: 1;
+    }
+
+    .corner-words .line {
+      width: 1px;
+      background: rgba(169,183,198,.7);
+    }
+
     .button {
       position: absolute;
       left: 44.5%;
@@ -100,6 +127,18 @@
         margin-top: -4%;
       }
 
+      .corner-words {
+        top: 4.5%;
+        right: 2.3%;
+        column-gap: 7px;
+      }
+
+      .corner-words .words {
+        gap: 4px;
+        font-size: .38rem;
+        letter-spacing: .22em;
+      }
+
       .button {
         left: 48%;
         top: 82%;
@@ -121,6 +160,17 @@
     <section class="card">
       <div class="banner-wrap">
         <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
+
+        <div class="corner-words" aria-hidden="true">
+          <div class="words">
+            <span>PLAY</span>
+            <span>CREATE</span>
+            <span>SOLVE</span>
+            <span>ITERATE</span>
+          </div>
+          <span class="line"></span>
+        </div>
+
         <a class="button" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">Download PDF</a>
       </div>
 
