@@ -9,8 +9,6 @@
       color-scheme: dark;
       --bg: #08111a;
       --panel: #0d1b29;
-      --text: #f5f7fa;
-      --accent: #4f9cff;
       --border: rgba(255,255,255,.08);
     }
 
@@ -19,9 +17,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: linear-gradient(180deg, #08111a 0%, #0a1520 100%);
-      color: var(--text);
     }
 
     .wrap {
@@ -38,86 +34,10 @@
       box-shadow: 0 18px 60px rgba(0,0,0,.35);
     }
 
-    .banner-wrap {
-      position: relative;
-      overflow: hidden;
-      background: #08111a;
-    }
-
     .banner {
       display: block;
       width: 100%;
       height: auto;
-      margin-top: -6.5%;
-    }
-
-    .corner-mask {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 19%;
-      height: 19%;
-      background:
-        linear-gradient(135deg,
-          rgba(26,42,59,.97) 0%,
-          rgba(29,46,65,.96) 48%,
-          rgba(34,51,70,.94) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .corner-words {
-      position: absolute;
-      top: 5.5%;
-      right: 3.2%;
-      display: grid;
-      grid-template-columns: 1fr 1px;
-      column-gap: 12px;
-      align-items: stretch;
-      color: rgba(169,183,198,.55);
-      pointer-events: none;
-      text-align: right;
-      z-index: 2;
-    }
-
-    .corner-words .words {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      font-size: clamp(.48rem, .78vw, .72rem);
-      letter-spacing: .32em;
-      line-height: 1;
-    }
-
-    .corner-words .line {
-      width: 1px;
-      background: rgba(169,183,198,.7);
-    }
-
-    .button {
-      position: absolute;
-      left: 44.5%;
-      top: 83%;
-      transform: translate(-50%, -50%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 18px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      background: var(--accent);
-      color: #06111c;
-      box-shadow: 0 8px 24px rgba(0,0,0,.28);
-      transition: transform .15s ease, filter .15s ease;
-      z-index: 2;
-    }
-
-    .button:hover {
-      transform: translate(-50%, -52%);
-      filter: brightness(1.05);
     }
 
     .viewer {
@@ -140,36 +60,6 @@
         border-radius: 12px;
       }
 
-      .banner {
-        margin-top: -4%;
-      }
-
-      .corner-mask {
-        width: 22%;
-        height: 18%;
-      }
-
-      .corner-words {
-        top: 4.5%;
-        right: 2.3%;
-        column-gap: 7px;
-      }
-
-      .corner-words .words {
-        gap: 4px;
-        font-size: .38rem;
-        letter-spacing: .22em;
-      }
-
-      .button {
-        left: 48%;
-        top: 82%;
-        min-height: 34px;
-        padding: 0 10px;
-        border-radius: 8px;
-        font-size: .75rem;
-      }
-
       .viewer {
         height: 78vh;
         min-height: 560px;
@@ -180,24 +70,7 @@
 <body>
   <main class="wrap">
     <section class="card">
-      <div class="banner-wrap">
-        <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
-
-        <div class="corner-mask" aria-hidden="true"></div>
-
-        <div class="corner-words" aria-hidden="true">
-          <div class="words">
-            <span>PLAY</span>
-            <span>CREATE</span>
-            <span>SOLVE</span>
-            <span>ITERATE</span>
-          </div>
-          <span class="line"></span>
-        </div>
-
-        <a class="button" href="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/export?format=pdf&amp;tab=default" target="_blank" rel="noopener noreferrer">Download PDF</a>
-      </div>
-
+      <img class="banner" src="resume-banner.png" alt="Christopher Bonetto - Software Engineer resume banner" />
       <iframe class="viewer" src="https://docs.google.com/document/d/1o_6KmcrfAvrHSskuKZcNn9J--DueEE6SsPsilRMWyvA/preview?tab=default" title="Christopher Bonetto Resume"></iframe>
     </section>
   </main>
